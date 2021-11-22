@@ -57,3 +57,52 @@ def reducerePretLaCheckinFacut(procent, lst):
         else:
             newList.append(rezervare)
     return newList
+
+def pretMaxPerClasa(lst):
+    """
+    determina cel mai mare pret pentru fiecare clasa 
+    :param lst: list
+    return: dict ce contine ca si chei clasele, iar la valori are cel mai mare pret pentru clasa respectiva
+    """
+    if len(lst) == 0:
+        raise LogicError("Trebuie sa adaugati mai intai rezervari!")
+    rezultat = {}
+    for rezervare in lst:
+        clasa = getClasa(rezervare)
+        pret = getPret(rezervare)
+        if clasa in rezultat:
+            if pret > rezultat[clasa]:
+                rezultat[clasa] = pret
+        else:
+            rezultat[clasa] = pret
+
+    return rezultat
+
+def returnPret(rezervare):
+    return getPret(rezervare)
+
+def ordonareDescDupaPret(lst):
+    """
+    ordoneaza lista descrescator dupa pret
+    :param lst: list
+    return: lista ordonata
+    """
+    return sorted(lst, key=returnPret, reverse=True)
+
+def totalPreturiPerNume(lst):
+    """
+    calculeaza totalul preturilor pentru fiecare nume
+    :param lst: list
+    return: dict ce contine ca si chei numele, iar la valori totalul preturilor pentru acel nume
+    """
+    if len(lst) == 0:
+        raise LogicError("Trebuie sa adaugati mai intai rezervari")
+    rezultat = {}
+    for rezervare in lst:
+        nume = getNume(rezervare)
+        pret = getPret(rezervare)
+        if nume in rezultat:
+            rezultat[nume] += pret
+        else:
+            rezultat[nume] = pret
+    return rezultat

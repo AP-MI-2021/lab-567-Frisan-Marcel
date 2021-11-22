@@ -84,7 +84,7 @@ def modificaRezervare(id, nume, clasa, pret, checkin, lst):
     if nume == "":
         erori += "Nume/Checkin nu au primit o valoare valida! \n"
     if clasa not in ["economy", "economy plus", "business"]:
-        erori += "Clasa poate avea doar valori din ['economy', 'economy plus', 'business']"
+        erori += "Clasa poate avea doar valori din ['economy', 'economy plus', 'business'] \n"
     if checkin.lower() not in ["da","nu"]:
         erori += "Checkin trebuie sa fie 'da' sau 'nu' \n"
     if getById(id, lst) is None:

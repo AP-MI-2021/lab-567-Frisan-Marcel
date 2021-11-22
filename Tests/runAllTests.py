@@ -2,6 +2,7 @@ from Tests.testDomain import testDomain
 from Tests.testCRUD import *
 from Tests.testFunctionalitati import *
 
+
 def runTests():
     testDomain()
     testCreazaRezervare()
@@ -10,3 +11,7 @@ def runTests():
     testGetById()
     testReducerePretLaCheckinFacut()
     testUpgradeClasaByNume()
+    testPretMaxPerClasa()
+    testOrdonareDescDupaPret()
+    TestTotalPreturiPerNume()
+    testUndoRedo()

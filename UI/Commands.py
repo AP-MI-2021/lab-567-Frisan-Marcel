@@ -1,6 +1,7 @@
 from Logic.CRUD import *
 from utils import showAll
 from Exceptions.CustomExceptions import LogicError
+
 def getCommands(string, lst):
     """
     """

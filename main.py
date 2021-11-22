@@ -10,13 +10,7 @@ def main():
     runMethod = getRunMethod()
 
     if runMethod == "menu":
-        lst = adaugaRezervare(1, "paul", "economy", 44, "da", lst)
-        lst = adaugaRezervare(2, "paul", "economy plus", 33, "nu", lst)
-        lst = adaugaRezervare(3, "paul", "business", 2, "da", lst)
-        lst = adaugaRezervare(4, "mircea", "economy", 44, "da", lst)
-
         runMenu(lst)
-    
     elif runMethod == "commands":
         runCommands(lst) 
 

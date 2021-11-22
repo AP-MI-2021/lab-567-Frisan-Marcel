@@ -25,5 +25,3 @@ def showAll(lst):
             print(toString(rezervare))
     except:
         print("Error: Nicio rezervare nu a fost adaugata inca!")
-
-
